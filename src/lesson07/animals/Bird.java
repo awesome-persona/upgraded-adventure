@@ -1,6 +1,6 @@
 package lesson07.animals;
 
-public abstract class Bird extends Animal {
+public abstract class Bird extends Animal implements Flyable {
 
     private boolean wings;
 

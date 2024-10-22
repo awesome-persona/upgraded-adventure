@@ -8,11 +8,11 @@ public class Parrot extends Bird {
 
     @Override
     public void fly() {
-
+        System.out.println("I believe");
     }
 
     @Override
     public void eat() {
-
+        System.out.println("corn");
     }
 }

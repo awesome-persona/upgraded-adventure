@@ -8,11 +8,11 @@ public class Dog extends Mammal {
 
     @Override
     public void think() {
-
+        System.out.println("gav?");
     }
 
     @Override
     public void eat() {
-
+        System.out.println("eat bone");
     }
 }

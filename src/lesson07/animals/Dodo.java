@@ -8,11 +8,11 @@ public class Dodo extends Bird {
 
     @Override
     public void fly() {
-
+        System.out.println("fly on 100m");
     }
 
     @Override
     public void eat() {
-
+        System.out.println("eat worms");
     }
 }

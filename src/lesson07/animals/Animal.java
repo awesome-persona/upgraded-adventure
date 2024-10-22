@@ -1,6 +1,6 @@
 package lesson07.animals;
 
-public abstract class Animal {
+public abstract class Animal implements Eatable {
 
     private int age;
     private String size;
