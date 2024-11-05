@@ -3,7 +3,7 @@ package lesson07.animals;
 public class Parrot extends Bird {
 
     public Parrot(int age, String size) {
-        super(age, size, false, true);
+        super(age, size, false, true, BirdType.CLASS_A);
     }
 
     @Override
