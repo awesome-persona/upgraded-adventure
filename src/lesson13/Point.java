@@ -51,4 +51,32 @@ public class Point implements Comparable<Point> {
     public String toString() {
         return "(" + x + "," + y + ')';
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Point point)) return false;
+
+        return x == point.x
+                && y == point.y;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = x;
+        result = 31 * result + y;
+//        result = 31 * result + z;
+//        result = 31 * result + a;
+//        result = 31 * result + b;
+//        result = 31 * result + c;
+//        result = 31 * result + d;
+//        result = 31 * result + e;
+
+        //(0,1,2,3,4) -> (((0 * 31 + 1) * 31 + 2) * 31 + 3) * 31 + 4
+        //(4,3,2,1,0) -> (((4 * 31 + 3) * 31 + 2) * 31 + 1) * 31 + 0
+        //(11,11,11,11,11) -> (((11 * 31 + 11) * 31 + 11) * 31 + 11) * 31 + 11
+        //(11,11,11,11,11) -> (((11 * 31 + 11) * 31 + 11) * 31 + 11) * 31 + 11
+
+        return result;
+    }
 }
