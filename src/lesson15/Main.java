@@ -1,9 +1,6 @@
 package lesson15;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
 
@@ -16,8 +13,11 @@ public class Main {
 
 
     private static String readFromFile(String fileName) throws Exception {
-        try (var fis = new FileInputStream(fileName)){
-            for (int read = fis.read(); read != -1; read = fis.read()) {
+        try (var fis = new FileInputStream(fileName);
+             var bis = new BufferedInputStream(fis, 3)){
+//            byte[] bytes = bis.readAllBytes();
+//            String s = new String(bytes);
+            for (int read = bis.read(); read != -1; read = bis.read()) {
                 System.out.print((char) read);
             }
         }
@@ -27,9 +27,18 @@ public class Main {
     private static void writeToFileNewVersion(String fileName, String text) {
 
         try (FileOutputStream gg = new FileOutputStream("gg")){
-            try (FileOutputStream fos = new FileOutputStream(fileName)) {
+            try (FileOutputStream fos = new FileOutputStream(fileName);
+            var bos = new BufferedOutputStream(fos)) {
                 byte[] bytes = text.getBytes();
-                fos.write(bytes);
+                bos.write(bytes);
+                bos.write(bytes);
+                bos.write(bytes);
+                bos.write(bytes);
+                bos.write(bytes);
+                bos.write(bytes);
+
+                ///
+                bos.flush();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
