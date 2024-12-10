@@ -55,6 +55,9 @@ public class Main {
                 .mapToInt(str -> str.length())
                 .sum();
 
+//        if (Thread.interrupted()) {
+//            return;
+//        }
         int length = objects.stream()
                 .reduce((a, b) -> a + b)
                 .orElse("")
