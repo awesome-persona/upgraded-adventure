@@ -2,10 +2,10 @@ package lesson21;
 
 import java.util.stream.Stream;
 
-public class Pair<K,T> {
+public class Pair<K, T> {
 
-    private K first;
-    private T last;
+    private volatile K first;
+    private volatile T last;
 
     public K first() {
         return null;
@@ -16,14 +16,16 @@ public class Pair<K,T> {
     }
 
     public Pair<T, K> swap() {
+        synchronized (this) {
+            return null;
+        }
+    }
+
+    public synchronized <M> Pair<M, K> replaceFirst(M value) {
         return null;
     }
 
-    public <M> Pair<M, K> replaceFirst(M value) {
-        return null;
-    }
-
-    public <M> Pair<T, M> replaceLast(M value) {
+    public synchronized <M> Pair<T, M> replaceLast(M value) {
         return null;
     }
 
