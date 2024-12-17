@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         Store store = new Store(3, 10);
 
         List<Runnable> runnables = new ArrayList<>();
