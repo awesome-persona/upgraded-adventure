@@ -1,5 +1,7 @@
 package lesson23.command;
 
+import lesson23.factory.Color;
+
 public class RemoteControl {
 
     private static volatile RemoteControl singleton;
@@ -26,11 +28,16 @@ public class RemoteControl {
     }
 
     public RemoteControl selectCommand(CommandType commandType, Light light) {
+        return selectCommand(commandType, light, Color.WHITE);
+    }
+
+    public RemoteControl selectCommand(CommandType commandType, Light light, Color color) {
         switch (commandType) {
             case LIGHT_ON -> this.command = new LightOnCommand(light);
             case LIGHT_OFF -> this.command = new LightOffCommand(light);
+            case SET_COLOR -> this.command = new SetColorCommand(light, color);
             default -> throw new RuntimeException();
-        };
+        }
         return this;
     }
 
