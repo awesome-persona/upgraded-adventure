@@ -22,6 +22,7 @@ public class Main {
         shapeFactory.getShape(ShapeType.TRIANGLE).draw();
         shapeFactory.getShape(ShapeType.CIRCLE).draw();
         shapeFactory.getShape(ShapeType.TRIANGLE).draw();
+        shapeFactory.getShape(ShapeType.DIALOG_CLOUD).draw();
         shapeFactory.setColor(Color.GREEN);
         shapeFactory.getShape(ShapeType.TRIANGLE).draw();
         shapeFactory.getShape(ShapeType.SQUARE).draw();
